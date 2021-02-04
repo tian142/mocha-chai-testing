@@ -9,7 +9,7 @@ const expect = chai.expect
 // Lambdas lexically bind this and cannot access the Mocha context.
 // ========================================================
 
-it("should say hello", function() {
+it("should say hello", function () {
   const hello = utils.sayHello()
   expect(hello).to.be.a("string")
   expect(hello).to.equal("Hello")
@@ -25,9 +25,21 @@ it("should say hello", function() {
 // 4. Finally see if you would like to refactor your code at all.
 // This is called "Red-Green-Refactor"
 // ========================================================
-
-
-
+it("should return the area of a rectangle", function () {
+  const area = utils.area(6, 4)
+  expect(area).to.be.a("number")
+  expect(area).to.equal(24)
+})
+it("should return the perimeter of a rectangle", function () {
+  const perimeter = utils.perimeter(6, 4)
+  expect(perimeter).to.be.a("number")
+  expect(perimeter).to.equal(20)
+})
+it("should return the area of a circle with radius", function () {
+  const circleArea = utils.circleArea(5)
+  expect(circleArea).to.be.a("number")
+  expect(circleArea).to.equal(78.5)
+})
 
 // ========================================================
 // Level 2 Challenges
@@ -37,12 +49,12 @@ it("should say hello", function() {
 // tests eventually.
 // ========================================================
 
-beforeEach((done) => {
+beforeEach(done => {
   utils.clearCart()
   done()
 })
 
-it("Should create a new (object) Item with name and price", function() {
+it("Should create a new (object) Item with name and price", function () {
   const item = utils.createItem("apple", 0.99)
   expect(item).to.be.a("object")
   expect(item).to.have.property("name", "apple")

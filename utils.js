@@ -7,15 +7,15 @@ const sayHello = () => {
 }
 
 const area = (w, h) => {
-  // should return the area
+  return w * h
 }
 
 const perimeter = (w, h) => {
-  // should return the perimeter
+  return 2 * w + 2 * h
 }
 
 const circleArea = r => {
-  // should return the area of the circle
+  return 3.14 * r * r
 }
 
 // ========================================================
@@ -36,10 +36,10 @@ const createItem = (name, price) => {
 }
 
 const getShoppingCart = () => {
-  // should return the current state of shopping cart
+  return shoppingCart
 }
 
-const addItemToCart = (item) => {
+const addItemToCart = item => {
   // should add item to shopping cart
 }
 
@@ -47,12 +47,19 @@ const getNumItemsInCart = () => {
   // should return the total quantity of items in cart
 }
 
-const removeItemFromCart = (item) => {
+const removeItemFromCart = item => {
   // should remove item from shopping cart
 }
 
 module.exports = {
-  sayHello, area, perimeter, circleArea,
-  clearCart, createItem, getShoppingCart, addItemToCart,
-  getNumItemsInCart, removeItemFromCart
+  sayHello,
+  area,
+  perimeter,
+  circleArea,
+  clearCart,
+  createItem,
+  getShoppingCart,
+  addItemToCart,
+  getNumItemsInCart,
+  removeItemFromCart,
 }
